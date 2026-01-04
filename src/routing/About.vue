@@ -165,12 +165,12 @@ export default {
   data() {
     return {
       team: [
-        { name: 'ផល ពីល័ក្ខ', description: "Founder & CEO", image: "/public/assets/image/profile.me.jpg" },
-        { name: 'សារ៉ា ចាន់វាសនា', description: "Member", image: "/public/assets/image/veasna.jpg" },
-        { name: 'រិទ្ធី សុវណ្ណបញ្ញា', description: "Member", image: "/public/assets/image/panha.jpg" },
-        { name: 'ចម្រើន ចន្ធូ', description: "Member", image: "/public/assets/image/chanthou.jpg" },
-        { name: 'ថន ភត្រា', description: "Member", image: "/public/assets/image/pheaktra.jpg" },
-        { name: 'ហាន់ ហានណារ៉ា', description: "Member", image: "/public/assets/image/nara.jpg" },
+        { name: 'ផល ពីល័ក្ខ', description: "Founder & CEO", image: "public/assets/image/phileak.JPG" },
+        { name: 'សារ៉ា ចាន់វាសនា', description: "Member", image: "public/assets/image/veasna.jpg" },
+        { name: 'រិទ្ធី សុវណ្ណបញ្ញា', description: "Member", image: "public/assets/image/panha.jpg" },
+        { name: 'ចម្រើន ចន្ធូ', description: "Member", image: "public/assets/image/chanthou.jpg" },
+        { name: 'ថន ភត្រា', description: "Member", image: "public/assets/image/pheaktra.jpg" },
+        { name: 'ហាន់ ហានណារ៉ា', description: "Member", image: "public/assets/image/nara.jpg" },
       ]
     };
   }
