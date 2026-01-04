@@ -41,7 +41,7 @@
         <button @click="closeQrCode" class="absolute top-0 right-0 m-2 text-gray-700 font-bold">X</button>
         <h2 class="text-2xl mb-4 text-center">Scan to Pay</h2>
 
-        <img src="../assets/image/QRcode.jpg" alt="QR Code" class="w-60 h-64 mx-auto"/>
+        <img src="/../Bag-Store/public/assets/image/QRcode.jpg" alt="QR Code" class="w-60 h-64 mx-auto"/>
         <p class="mt-4 text-center">Total: ${{ totalPrice.toFixed(2) }}</p>
       </div>
     </div>
