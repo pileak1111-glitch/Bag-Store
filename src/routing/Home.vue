@@ -69,16 +69,6 @@
         <img src="/../Bag-Store/public/assets/image/tiktokicon.png" alt="">
         <svg viewBox="0 0 24 24" class="icon"></svg>
       </a>
-       <!-- <a href="https://x.com/" target="_blank" aria-label="X"
-        rel="nofollow noopener noreferrer" class="social-icon">
-        <img src="../assets/image/xicon.png" alt="">
-        <svg viewBox="0 0 24 24" class="icon"></svg>
-      </a>
-      <a href="https://youtube.com/" target="_blank" aria-label="Youtube"
-        rel="nofollow noopener noreferrer" class="social-icon">
-        <img src="../assets/image/youtubeicon.png" alt="">
-        <svg viewBox="0 0 24 24" class="icon"></svg>
-      </a> -->
     </div>
   </div>
 
