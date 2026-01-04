@@ -1,65 +1,115 @@
 <template>
-  <div class="flex justify-center items-center bg-gradient-to-r from-pink-300 to-yellow-400 text-white h-screen">
-    <div class="text-center p-10 rounded-md shadow-md w-full max-w-lg">
-      <h2 class="text-3xl font-bold mb-6 text-center text-green-700">Create Your BagStore Account</h2>
-      <form @submit.prevent="handleSignup" class="flex flex-col space-y-4">
-        <input
-          v-model="email"
-          type="email"
-          placeholder="Email"
-          required
-          class="p-3 border rounded w-full text-black focus:ring-2 focus:ring-green-400"
-        />
-        <input
-          v-model="password"
-          type="password"
-          placeholder="Password"
-          required
-          class="p-3 border rounded w-full text-black focus:ring-2 focus:ring-green-400"
-        />
+  <div class="min-h-screen flex items-center justify-center bg-gray-100">
+    <div class="bg-white p-8 rounded-xl shadow-md w-full max-w-md">
+      <h2 class="text-2xl font-bold text-center mb-6">Create Account</h2>
+
+      <form @submit.prevent="signup">
+        <!-- Name -->
+        <div class="mb-4">
+          <label class="block text-sm font-medium mb-1">Full Name</label>
+          <input
+            v-model="form.name"
+            type="text"
+            class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+            placeholder="Enter your name"
+            required
+          />
+        </div>
+
+        <!-- Email -->
+        <div class="mb-4">
+          <label class="block text-sm font-medium mb-1">Email</label>
+          <input
+            v-model="form.email"
+            type="email"
+            class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+
+        <!-- Password -->
+        <div class="mb-4">
+          <label class="block text-sm font-medium mb-1">Password</label>
+          <input
+            v-model="form.password"
+            type="password"
+            class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+            placeholder="Enter password"
+            required
+          />
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="mb-4">
+          <label class="block text-sm font-medium mb-1">Confirm Password</label>
+          <input
+            v-model="form.confirm"
+            type="password"
+            class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+            placeholder="Confirm password"
+            required
+          />
+        </div>
+
+        <!-- Error -->
+        <p v-if="error" class="text-red-500 text-sm mb-3">{{ error }}</p>
+
+        <!-- Button -->
         <button
           type="submit"
-          class="bg-green-600 text-white p-3 rounded hover:bg-green-700 transition"
+          class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
         >
           Sign Up
         </button>
       </form>
-      <router-link to="/login" class="block text-center mt-4 text-blue-500 hover:underline">
-        Already have an account? Login
-      </router-link>
+
+      <p class="text-center text-sm mt-4">
+        Already have an account?
+        <router-link to="/" class="text-blue-600 hover:underline">Login</router-link>
+      </p>
     </div>
   </div>
 </template>
 
-<script>
-import { ref } from "vue";
-import { useRouter } from "vue-router";
+<script setup>
+import { reactive, ref } from 'vue'
+import { useRouter } from 'vue-router'
 
-export default {
-  setup() {
-    const email = ref("");
-    const password = ref("");
-    const router = useRouter();
+const router = useRouter()
 
-    const handleSignup = () => {
-      if (email.value && password.value) {
-        const users = JSON.parse(localStorage.getItem("users")) || [];
-        const userExists = users.some((u) => u.email === email.value);
+const form = reactive({
+  name: '',
+  email: '',
+  password: '',
+  confirm: ''
+})
 
-        if (userExists) {
-          alert("User already exists. Please log in.");
-        } else {
-          users.push({ email: email.value, password: password.value });
-          localStorage.setItem("users", JSON.stringify(users));
-          alert("Registration successful! Please log in.");
-          router.push("/login");
-        }
-      } else {
-        alert("Please fill in all fields.");
-      }
-    };
+const error = ref('')
 
-    return { email, password, handleSignup };
-  },
-};
+const signup = () => {
+  if (form.password !== form.confirm) {
+    error.value = 'Passwords do not match'
+    return
+  }
+
+  const users = JSON.parse(localStorage.getItem('users') || '[]')
+
+  const exists = users.find(u => u.email === form.email)
+  if (exists) {
+    error.value = 'Email already registered'
+    return
+  }
+
+  users.push({
+    name: form.name,
+    email: form.email,
+    password: form.password
+  })
+
+  localStorage.setItem('users', JSON.stringify(users))
+
+  alert('Signup successful!')
+  router.push('/')
+}
 </script>
