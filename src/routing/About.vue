@@ -15,7 +15,7 @@
     
     <div class="p-6 text-sm">
       <h3 class="text-blue-600 text-xl font-semibold mb-4">Meet the Team</h3>
-      <div class="grid grid-cols-2 md:grid-cols-2 gap-4 text-3xl text-center">
+      <div class="grid grid-cols-3 md:grid-cols-3 gap-4 text-3xl text-center">
         <div v-for="member in team" :key="member.name" class="border p-4 rounded text-center">
           <h3 class="text-green-600 text-xl font-bold">{{ member.name }}</h3>
           <img :src="member.image" class="mx-auto h-32 w-32 object-cover rounded-full my-2" :alt="member.name">
@@ -166,7 +166,11 @@ export default {
     return {
       team: [
         { name: 'ផល ពីល័ក្ខ', description: "Founder & CEO", image: "/src/assets/image/profile.me.jpg" },
-        { name: 'ភឹម សារ៉ាក់', description: "Member", image: "/src/assets/image/profile.he.jpg" },
+        { name: 'សារ៉ា ចាន់វាសនា', description: "Member", image: "/src/assets/image/veasna.jpg" },
+        { name: 'រិទ្ធី សុវណ្ណបញ្ញា', description: "Member", image: "/src/assets/image/panha.jpg" },
+        { name: 'ចម្រើន ចន្ធូ', description: "Member", image: "/src/assets/image/chanthou.jpg" },
+        { name: 'ថន ភត្រា', description: "Member", image: "/src/assets/image/pheaktra.jpg" },
+        { name: 'ហាន់ ហានណារ៉ា', description: "Member", image: "/src/assets/image/nara.jpg" },
       ]
     };
   }
