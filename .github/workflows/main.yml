@@ -1,0 +1,30 @@
+name: Vue CI
+
+on:
+  push:
+    branches: [ "Veasna" ]
+  pull_request:
+    branches: [ "pileak" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+    #   - name: Deploy to infinitfree
+    #     uses: SamKirkland/FTP-Deploy-Action@4.3.0
+    #     with:
+    #       server: ${{ secrets.FTP_SERVER }}
+    #       username: ${{ secrets.FTP_USERNAME }}
+    #       password: ${{ secrets.FTP_PASSWORD }}
+    #       local-dir: ./dist
+    #       server-dir: /htdocs
