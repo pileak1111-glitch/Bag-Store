@@ -52,7 +52,7 @@
         
         <a href="https://facebook.com/" target="_blank" aria-label="Facebook"
           rel="nofollow noopener noreferrer" class="social-icon">
-          <img src="../assets/image/fb.png" alt="">
+          <img src="/../Bag-Store/public/assets/image/fb.png" alt="">
           <svg viewBox="0 0 24 24" class="icon">
           </svg>
         </a>
@@ -60,13 +60,13 @@
         
         <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"
           rel="nofollow noopener noreferrer" class="social-icon">
-          <img src="../assets/image/instagramicon.png" alt="">
+          <img src="/../Bag-Store/public/assets/image/instagramicon.png" alt="">
           <svg viewBox="0 0 24 24" class="icon"></svg>
         </a>
       <a
         href="https://vt.tiktok.com/" target="_blank" aria-label="TikTok"
         rel="nofollow noopener noreferrer" class="social-icon">
-        <img src="../assets/image/tiktokicon.png" alt="">
+        <img src="/../Bag-Store/public/assets/image/tiktokicon.png" alt="">
         <svg viewBox="0 0 24 24" class="icon"></svg>
       </a>
        <!-- <a href="https://x.com/" target="_blank" aria-label="X"
