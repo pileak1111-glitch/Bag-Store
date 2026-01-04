@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container">
-      <!-- Login Form -->
+
       <div class="form-box login" v-if="isLoginVisible">
         <form @submit.prevent="handleLogin">
           <h1>Login</h1>
@@ -42,12 +42,11 @@
         </form>
       </div>
 
-      <!-- Toggle Button -->
       <div class="toggle-box">
         <div class="toggle-panel toggle-left">
-          <h1>Hello,Welcome to BagStore 👜❤️</h1>
+          <h1>Hello,Welcome to BagStore </h1>
           <p>Don't have an account?</p>
-          <!-- <button class="btn register-btn" @click="toggleForm">Register</button> -->
+
           <router-link to="/signup" class="mt-4 text-white hover:underline"><button class="btn register-btn" @click="toggleForm">Register</button>
     </router-link>
         </div>
@@ -83,7 +82,7 @@ export default {
 
       if (user) {
         alert(`Login successful! Welcome back, ${user.email}!`);
-        this.$router.push('/'); // Redirect to home page
+        this.$router.push('/'); 
       } else {
         alert("Invalid email or password.");
       }
