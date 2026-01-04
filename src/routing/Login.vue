@@ -44,8 +44,8 @@
 
       <div class="toggle-box">
         <div class="toggle-panel toggle-left">
-          <h1>Hello,Welcome to BagStore </h1>
-          <p>Don't have an account?</p>
+          <h1>Hello, Welcome to BagStore </h1>
+          <p>Please Register to shop!</p>
 
           <router-link to="/signup" class="mt-4 text-white hover:underline"><button class="btn register-btn" @click="toggleForm">Register</button>
     </router-link>
@@ -53,7 +53,7 @@
 
         <div class="toggle-panel toggle-right">
           <h1>Welcome Back!</h1>
-          <p>Already have an account?</p>
+          <p>our Customer!</p>
           <button class="btn login-btn" @click="toggleForm">Login</button>
         </div>
       </div>
